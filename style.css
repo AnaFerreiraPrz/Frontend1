@@ -1,19 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:ital,wght@0,100;1,100&display=swap');
+/* flex-direction para determinar la direccion de columnas
+o filas (row, column, reverse)*/
+
+/* justify-content para alinear los items (flex-start,
+flex-end, center, space-between [a los bordes], 
+space-around [uniforme]*/
+
+/* align-content y align-items son similares (stretch,
+flex-star, flex-end, center, between, around*/
+
+/* flew-wrap es para aclararle al padre que debe respetar el
+ancho de sus hijos (wrap, nowrap, wrap-reverse)*/
+
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+:wght@400;500;700&family=Roboto:ital,wght@0,100;1,100&display=swap');
 
 * {
     box-sizing: border-box;
-    font-family: 'Be Vietnam Pro', sans-serif;
+    font-family: 'Be Vietnam', sans-serif;
     font-size: 16px;
-    background-image: url('./img/bg-simplify-section-mobile.svg');
+    background-image: url('');
 }
 
-/* display-flex para usar las propiedades de flexbox y poder 
-mover los elementos dentro de un contenedor padre*/
+body {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    width: 90%;
 }
 
 .logo {
@@ -29,8 +57,72 @@ header {
     align-items: center;
 }
 
+.botonNav,
+.horizontalContent button,
+.centeredContent button {
+    display: flex;
+    width: 134px;
+    height: 44px;
+    top: 65px;
+    left: 1140.54px;
+    border-radius: 50px;
+    padding: 10px;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    background-color: #F3603B;
+    border: none;
+    box-shadow: 0px 4px 8px rgba(243, 96, 59, 0.5);
+    font-size: 13.18px;
+    line-height: 19.26px;
+    font-weight: 500;
+}
+
+h1 {
+    width: 439px;
+    height: 198px;
+    font-weight: 700;
+    font-size: 58px;
+    letter-spacing: -3.5%;
+    font-style: normal;
+    line-height: 66px;
+    display: flex;
+    align-items: center;
+    color: #232C50;
+}
+
+.first {
+    width: 350px;
+    height: 71px;
+    top: 26px;
+    font-weight: 500;
+    font-size: 16.56px;
+    line-height: 26.01px;
+    color: #000000;
+}
+
+h2 {
+    width: 433px;
+    height: 88px;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 41.26px;
+    color: #232851;
+}
+
+.second {
+    width: 337px;
+    height: 88px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24.18px;
+    color: #000000;
+}
+
 .horizontalContent {
     display: flex;
+    justify-content: space-around;
 }
 
 .contenedorListas {
@@ -64,35 +156,43 @@ header {
     justify-content: center;
 }
 
-.centeredAvatars {
+.headerReview {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.reviews {
+    margin-top: 10vh;
+    margin-bottom: 10vw;
+    row-gap: 10vh;
+    justify-content: center;
+}
+
+.avatarContainer {
+    justify-content: center;
+    width: 100%;
+}
+
+.centeredAvatar {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 445px;
 }
 
-/* flex-direction para determinar la direccion de columnas
-o filas (row, column, reverse)*/
-
-/* justify-content para alinear los items (flex-start,
-flex-end, center, space-between [a los bordes], 
-space-around [uniforme]*/
-
-/* align-content y align-items son similares (stretch,
-flex-star, flex-end, center, between, around*/
-
-button {
-    display: flex;
-    border-radius: 50px;
-    justify-content: center;
-    align-items: center;
-    height: 40px;
+.centeredAvatar img {
     width: 70px;
-    justify-content: space-between;
-    color: #FFFFFF;
-    background-color: #F3603B;
-    border: none;
-    box-shadow: 0px 4px 8px rgba(243, 96, 59, 0.5);
+    height: 70px;
+    z-index: 1;
+}
+
+.centeredAvatar div {
+    background-color: #FAFAFA;
+    margin-top: -35px; 
+    padding-top: 35px;
+    height: 219px;
 }
 
 .preFooter {
@@ -101,7 +201,7 @@ button {
     align-items: center;
     background-color: #F3613C;
     width: 100%;
-    height: 224px;
+    height: 20vh;
 }
 
 .preFooter h2 {
@@ -121,26 +221,81 @@ button {
     justify-content: center;
     height: 40px;
     width: 110px;
+    gap: 10px;
     background-color: #FFFFFF;
     color: #F3603B;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-}
-
-.mainFooter {
-    background-color: #1E1E26;
+    font-size: 13.18px;
+    line-height: 19.26px;
+    font-weight: 500;
+    border: none;
 }
 
 .redesSociales {
     display: flex;
-    width: 20px;
-    height: 20px;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.mainFooter div {
+.redesSociales svg {
+    fill: #FFFFFF;
+}
+
+.redesSociales a {
+    width: 20px;
+    height: 20px;
+}
+
+.links {
     display: flex;
+    flex-direction: column;
+}
+
+.links li {
+    margin: 2vh 0;
+    color: #FFFFFF;
+}
+
+input:focus::placeholder {
+    color: transparent;
+    background-color: #FFFFFF;
+}
+
+input {
+    width: 201px;
+    height: 44px;
+    padding: 10px;
+    gap: 10px;
+    border-radius: 50px;
+}
+
+.botonFooter {
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 63px;
+    gap: 10px;
+    padding: 10px;
+    background-color: #F3603B;
+    color: #FFFFFF;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+    font-size: 13.18px;
+    line-height: 19.26px;
+    font-weight: 500;
+    border: none;
+}
+
+.mainFooter {
+    display: flex;
+    background-color: #1E1E26;
     align-items: center;
     justify-content: space-around;
+    width: 100%;
+    height: 20vh;
+}
+
+.footerLogo {
+    row-gap: 5vh;
 }
 
 .mainFooter p {
@@ -150,37 +305,14 @@ button {
     color: #8C8C94;
 }
 
-.links #links{
+/* row-gap sirve para distanciar elementos */
+
+.footerInput {
     display: flex;
-    flex-wrap: wrap;
-    height: 40vh;
+    flex-direction: column;
+    row-gap: 3vh;
+    padding-top: 5vh;
 }
-
-/* flew-wrap es para aclararle al padre que debe respetar el
-ancho de sus hijos (wrap, nowrap, wrap-reverse)*/
-
-input:focus::placeholder {
-    color: transparent;
-}
-
-/* @media (max-width: 800px) {
-
-    body {
-        background-image: url('./img/bg-simplify-section-desktop.svg');
-        display: flex;
-        flex-direction: column;
-        margin-left: 10%;
-        margin-right: 10%;
-    }
-} */
-
-/* @media screen (max-width: 800px) {
-    .body-back-top {
-        top: -140px;
-        right: -166px;
-        height: 550px;
-    }
-} */
 
 .hamburger {
     display: none;
