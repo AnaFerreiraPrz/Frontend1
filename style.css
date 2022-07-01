@@ -11,11 +11,11 @@ flex-star, flex-end, center, between, around*/
 /* flew-wrap es para aclararle al padre que debe respetar el
 ancho de sus hijos (wrap, nowrap, wrap-reverse)*/
 
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+:wght@400;500;700&family=Roboto:ital,wght@0,100;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:ital,wght@0,100;1,100&display=swap');
 
 * {
     box-sizing: border-box;
-    font-family: 'Be Vietnam', sans-serif;
+    font-family: 'Be Vietnam Pro', sans-serif;
     font-size: 16px;
     background-image: url('');
 }
@@ -42,6 +42,7 @@ main {
 
 section {
     width: 90%;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -138,6 +139,14 @@ h2 {
     border-radius: 20px 0 0 20px;
 }
 
+.contenedorListas {
+    color: #B3B2B7;
+    width: 437px;
+    font-size: 16.3px;
+    line-height: 25.52px;
+    letter-spacing: -1%;
+}
+
 .itemLista p span {
     color: #FFFFFF;
     background-color: #F3603B;
@@ -165,7 +174,7 @@ h2 {
 .reviews {
     margin-top: 10vh;
     margin-bottom: 10vw;
-    row-gap: 10vh;
+    row-gap: 2vh;
     justify-content: center;
 }
 
@@ -291,7 +300,6 @@ input {
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    height: 20vh;
 }
 
 .footerLogo {
@@ -318,7 +326,7 @@ input {
     display: none;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 700px) {
     .hamburger {
         display: block;
     }
@@ -329,5 +337,9 @@ input {
 
     .botonNav {
         display: none;
+    }
+
+    .horizontalContent {
+        flex-direction: column-reverse;
     }
 }
