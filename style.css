@@ -38,6 +38,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 
 section {
@@ -176,6 +177,7 @@ h2 {
     margin-bottom: 10vw;
     row-gap: 2vh;
     justify-content: center;
+    width: 100%;
 }
 
 .avatarContainer {
@@ -326,7 +328,10 @@ input {
     display: none;
 }
 
-@media (max-width: 700px) {
+@media only screen and (max-width: 700px) {
+    .graficas{
+        width: 90vw;
+    }
     .hamburger {
         display: block;
     }
@@ -341,5 +346,14 @@ input {
 
     .horizontalContent {
         flex-direction: column-reverse;
+    }
+
+    .preFooter {
+        flex-direction: column;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+
     }
 }
