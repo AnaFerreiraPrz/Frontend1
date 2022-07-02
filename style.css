@@ -1,16 +1,3 @@
-/* flex-direction para determinar la direccion de columnas
-o filas (row, column, reverse)*/
-
-/* justify-content para alinear los items (flex-start,
-flex-end, center, space-between [a los bordes], 
-space-around [uniforme]*/
-
-/* align-content y align-items son similares (stretch,
-flex-star, flex-end, center, between, around*/
-
-/* flew-wrap es para aclararle al padre que debe respetar el
-ancho de sus hijos (wrap, nowrap, wrap-reverse)*/
-
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&family=Roboto:ital,wght@0,100;1,100&display=swap');
 
 * {
@@ -22,9 +9,6 @@ ancho de sus hijos (wrap, nowrap, wrap-reverse)*/
 
 body {
     margin: 0;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
 }
 
 header {
@@ -81,9 +65,14 @@ section {
     font-weight: 500;
 }
 
+p {
+    color: #B3B2B7;
+}
+
 h1 {
-    width: 439px;
-    height: 198px;
+    /* width: 439px; */
+    /* height: 198px; */
+    max-width: 40vw;
     font-weight: 700;
     font-size: 58px;
     letter-spacing: -3.5%;
@@ -94,6 +83,15 @@ h1 {
     color: #232C50;
 }
 
+h2 {
+    /* width: 433px; */
+    /* height: 88px; */
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 41.26px;
+    color: #232851;
+}
+
 .first {
     width: 350px;
     height: 71px;
@@ -101,25 +99,14 @@ h1 {
     font-weight: 500;
     font-size: 16.56px;
     line-height: 26.01px;
-    color: #000000;
-}
-
-h2 {
-    width: 433px;
-    height: 88px;
-    font-weight: 700;
-    font-size: 36px;
-    line-height: 41.26px;
-    color: #232851;
 }
 
 .second {
-    width: 337px;
+    max-width: 337px;
     height: 88px;
     font-weight: 500;
     font-size: 16px;
     line-height: 24.18px;
-    color: #000000;
 }
 
 .horizontalContent {
@@ -127,13 +114,8 @@ h2 {
     justify-content: space-around;
 }
 
-.contenedorListas {
-    display: flex;
-    flex-direction: column;
-}
-
 .itemLista p:first-of-type {
-    color: #323851;
+    color: #232C50;
     font-weight: 700;
     padding: 10px 0;
     margin: 25px 0 15px 15px;
@@ -141,6 +123,8 @@ h2 {
 }
 
 .contenedorListas {
+    display: flex;
+    flex-direction: column;
     color: #B3B2B7;
     width: 437px;
     font-size: 16.3px;
@@ -190,7 +174,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 445px;
+    max-width: 445px;
 }
 
 .centeredAvatar img {
@@ -201,7 +185,7 @@ h2 {
 
 .centeredAvatar div {
     background-color: #FAFAFA;
-    margin-top: -35px; 
+    margin-top: -35px;
     padding-top: 35px;
     height: 219px;
 }
@@ -212,11 +196,11 @@ h2 {
     align-items: center;
     background-color: #F3613C;
     width: 100%;
-    height: 20vh;
+    /* height: 20vh; */
 }
 
 .preFooter h2 {
-    width: 438px;
+    /* width: 438px; */
     height: 96px;
     color: #FFFFFF;
     font-style: bold;
@@ -225,6 +209,7 @@ h2 {
     line-height: 47.8px;
     letter-spacing: -0.5%;
     align-content: center;
+
 }
 
 .postulate {
@@ -254,6 +239,12 @@ h2 {
 .redesSociales a {
     width: 20px;
     height: 20px;
+}
+
+.linksContainer {
+    display: flex;
+    justify-content: space-between;
+    gap: 30vh;
 }
 
 .links {
@@ -301,7 +292,7 @@ input {
     background-color: #1E1E26;
     align-items: center;
     justify-content: space-around;
-    width: 100%;
+    /* width: 100%; */
 }
 
 .footerLogo {
@@ -328,18 +319,30 @@ input {
     display: none;
 }
 
-@media only screen and (max-width: 700px) {
-    .graficas{
+@media (max-width: 700px) {
+
+    header,
+    main,
+    footer {
+        width: 100vw;
+    }
+
+    .horizontalContent,
+    .contenedorListas,
+    .verticalContent,
+    .preFooter {
+        width: inherit;
+    }
+
+    .graficas {
         width: 90vw;
     }
+
     .hamburger {
         display: block;
     }
 
-    .listasNav {
-        display: none;
-    }
-
+    .listasNav,
     .botonNav {
         display: none;
     }
@@ -354,6 +357,33 @@ input {
 
     footer {
         flex-direction: column-reverse;
-
     }
+
+    .verticalContent {
+        flex-direction: column-reverse;
+    }
+
+    .redesSociales {
+        justify-content: space-around;
+    }
+
+    .itemLista p:first-of-type {
+        background-color: #FFF0EC;
+    }
+
+    .linksContainer {
+        gap: 9vh;
+    }
+
+    #logoPie {
+        justify-content: center;
+    }
+
+    /* .copy {
+        display: flex;
+        position: relative;
+        top: 410px;
+    } */
+
+
 }
